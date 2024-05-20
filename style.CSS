@@ -1,0 +1,121 @@
+body{
+    margin: 0px;    
+}
+
+.boton:hover {
+    background-color: #0056b3;
+}
+
+#contenedor{
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: .25fr 1fr .25fr;
+    grid-template-rows: 5% 1fr 5%;
+    grid-template-areas: 
+    "nav nav nav"
+    "colum tablero otros"
+    "footer footer footer";
+}
+
+#movimientos{
+    grid-area: movimientos;
+    text-align: center;
+}
+
+#ajedrez{
+    display: grid;
+    grid-area: ajedrez;
+    grid-template-columns: repeat(8 , 1fr);
+    grid-template-rows: repeat(8 , 1fr);    
+}
+
+.celda {
+    border: 1px solid black; /* Borde para las celdas */
+}
+
+.celda-blanca {
+    background-color: #f0d9b5; /* Color para las celdas blancas */
+}
+
+.celda-negra {
+    background-color: #b58863; /* Color para las celdas negras */
+}
+
+#titulo{
+    grid-area: titulo;
+}
+
+#tablero{
+    grid-area: tablero;
+    background-color: rgb(161, 39, 39);
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "titulo" 
+    "ajedrez";
+
+    #movimientos {
+        display: none;
+    }
+}
+
+#nav{
+    grid-area: nav;
+    background-color: aqua;
+}
+
+
+#colum{
+    grid-area: colum;
+    background-color: rgb(20, 26, 26);
+}
+
+
+#otros{
+    grid-area: otros;
+    background-color: rgb(75, 11, 131);
+}
+
+#footer{
+    grid-area: footer;
+    background-color: rgb(10, 126, 72);
+}
+
+@media screen and (max-width: 992px){
+
+    #contenedor{
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: .25fr 1fr .25fr;
+        grid-template-rows: 5% 1fr 5%;
+        grid-template-areas: 
+        "nav nav nav"
+        "colum tablero tablero"
+        "footer footer footer";
+    }
+
+    #otros {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px){
+
+    #contenedor{
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: .05fr .05fr 1fr .05fr;
+        grid-template-areas: 
+        "nav"
+        "colum"
+        "tablero"
+        "footer";
+    }
+
+    #otros{
+        display: none;
+    }
+}
