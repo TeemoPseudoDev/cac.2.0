@@ -1,0 +1,167 @@
+body{
+    margin: 0px;  
+}
+
+.boton:hover {
+    background-color: #0056b3;
+}
+
+#contenedor{
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: .25fr 1fr .25fr;
+    grid-template-rows: 5% 1fr 5%;
+    grid-template-areas: 
+    "nav nav nav"
+    "colum tablero otros"
+    "footer footer footer";
+}
+
+a {
+    text-decoration: none;
+}
+
+#movimientos{
+    grid-area: movimientos;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+
+    background-color: #798a9d;
+}
+
+#ajedrez{
+
+    margin: 5px;
+    display: grid;
+    grid-area: ajedrez;
+    grid-template-columns: repeat(8 , 1fr);
+    grid-template-rows: repeat(8 , 1fr);
+    background: #798a9d;    
+}
+
+.celda {
+    border: 1px solid black; /* Borde para las celdas */
+}
+
+.celda-blanca {
+    background-color: #f0d9b5; /* Color para las celdas blancas */
+}
+
+.celda-negra {
+    background-color: #b58863; /* Color para las celdas negras */
+}
+
+#titulo{
+    grid-area: titulo;
+}
+
+#tablero{
+    grid-area: tablero;
+    background-color: rgb(161, 39, 39);
+    text-align: center;
+    display: grid;
+    grid-template-columns: .85fr ;
+    grid-template-rows: .1fr .9fr;
+    grid-template-areas: 
+    "titulo titulo" 
+    "ajedrez movimientos";
+}
+
+#nav{
+    grid-area: nav;
+    background-color: #d96941;
+    color: #f2e2ce;
+    display: flex;
+    align-items: center;
+}
+
+
+#colum{
+    grid-area: colum;
+    background-color: rgb(140, 71, 11);
+}
+
+
+#otros{
+    grid-area: otros;
+    background-color: rgb(75, 11, 131);
+}
+
+#footer{
+    grid-area: footer;
+    background-color: rgb(10, 126, 72);
+    overflow: hidden;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #a63921;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px;
+    border: 2px solid #fff9f6;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button:active {
+    background-color: #00408a;
+}
+
+@media screen and (max-width: 992px){
+
+    #contenedor{
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: .25fr 1fr .25fr;
+        grid-template-rows: 5% 1fr 5%;
+        grid-template-areas: 
+        "nav nav nav"
+        "colum tablero tablero"
+        "footer footer footer";
+    }
+
+    #otros {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px){
+
+
+    #tablero{
+
+        grid-template-columns: 1fr ;
+        grid-template-rows: .1fr .9fr;
+        grid-template-areas: 
+        "titulo titulo" 
+        "ajedrez";
+    }
+
+    #contenedor{
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: .05fr .05fr 1fr .05fr;
+        grid-template-areas: 
+        "nav"
+        "colum"
+        "tablero"
+        "footer";
+    }
+
+    #otros, #movimientos{
+        display: none;
+    }
+}
+
