@@ -2,8 +2,8 @@ body{
     margin: 0px;    
 }
 
-.boton:hover {
-    background-color: #0056b3;
+* {
+    box-sizing: border-box;
 }
 
 #contenedor{
@@ -17,61 +17,81 @@ body{
     "footer footer footer";
 }
 
-#movimientos{
-    grid-area: movimientos;
+#tablero{
+    grid-area: tablero;
+    background-color: rgb(161, 39, 39);
     text-align: center;
+    display: grid;
+    grid-template-columns: .95fr .15fr;
+    grid-template-rows: .05fr .95fr;
+    grid-template-areas: 
+    "titulo titulo" 
+    "ajedrez movimientos";
 }
 
 #ajedrez{
+    background-color: #fff;
     display: grid;
     grid-area: ajedrez;
     grid-template-columns: repeat(8 , 1fr);
     grid-template-rows: repeat(8 , 1fr);    
 }
 
-.celda {
-    border: 1px solid black; /* Borde para las celdas */
-}
-
-.celda-blanca {
-    background-color: #f0d9b5; /* Color para las celdas blancas */
-}
-
-.celda-negra {
-    background-color: #b58863; /* Color para las celdas negras */
+#movimientos{
+    grid-area: movimientos;
+    text-align: center;
+    background-color: bisque;
 }
 
 #titulo{
     grid-area: titulo;
 }
 
-#tablero{
-    grid-area: tablero;
-    background-color: rgb(161, 39, 39);
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: 
-    "titulo" 
-    "ajedrez";
-
-    #movimientos {
-        display: none;
-    }
-}
-
 #nav{
     grid-area: nav;
-    background-color: aqua;
+    background-color: #d96941;
+    color: #f2e2ce;
+    display: flex;
+    align-items: center;
 }
 
+#navButon {
+    display: flex;
+    align-items: center;     /* Centra verticalmente */
+    margin: auto;            /* Centra el div dentro de su contenedor */
+}
+
+a {
+    text-decoration: none;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #a63921;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px;
+    border: 2px solid #fff9f6;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button:active {
+    background-color: #00408a;
+}
 
 #colum{
     grid-area: colum;
     background-color: rgb(20, 26, 26);
 }
-
 
 #otros{
     grid-area: otros;
@@ -84,6 +104,23 @@ body{
 }
 
 @media screen and (max-width: 992px){
+
+    #tablero{
+        grid-area: tablero;
+        background-color: rgb(161, 39, 39);
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: .05fr 1fr;
+        grid-template-areas: 
+        "titulo" 
+        "ajedrez";
+
+        #otros, #movimientos {
+            display: none;
+        }
+    
+    }
 
     #contenedor{
         display: grid;

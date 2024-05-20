@@ -1,23 +1,22 @@
 body{
     margin: 0px;    
-    background: rgba(0, 0, 0, 0.45);
+    background: rgb(255, 255, 255);
 }
 
 #contenedor{
     display: grid;
     min-height: 100vh;
-    grid-template-columns: .25fr 1fr .25fr;
-    grid-template-rows: 5% 1fr 5%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5% 95% 5%;
     grid-template-areas: 
-    "nav nav nav"
-    ". noticias ."
-    "footer footer footer";
+    "nav"
+    "noticias"
+    "footer";
 
-    #otros, #colum{
+    #colum {
         display: none;
     }
 }
-
 
 #noticias{
     grid-area: noticias;
@@ -46,7 +45,6 @@ body{
     align-items: center;
     flex-direction: column;
 }
-
 
 #seccionNews h2 {
     font-size: 24px;
@@ -85,21 +83,14 @@ img.styled {
     align-items: center;
 }
 
-
-
-#colum{
-    grid-area: colum;
-    background-color: rgb(140, 71, 11);
+#navButon {
+    display: flex;
+    align-items: center;     /* Centra verticalmente */
+    margin: auto;            /* Centra el div dentro de su contenedor */
 }
 
-#otros{
-    grid-area: otros;
-    background-color: rgb(75, 11, 131);
-}
-
-#footer{
-    grid-area: footer;
-    background-color: #d96941;
+a {
+    text-decoration: none;
 }
 
 .button {
@@ -117,23 +108,27 @@ img.styled {
     border: 2px solid #fff9f6;
 }
 
-a {
-    text-decoration: none;
-}
-
-#navButon {
-    display: flex;
-    align-items: center;     /* Centra verticalmente */
-    margin: auto;            /* Centra el div dentro de su contenedor */
-}
-
-
 .button:hover {
     background-color: #0056b3;
 }
 
 .button:active {
     background-color: #00408a;
+}
+
+#colum{
+    grid-area: colum;
+    background-color: rgb(140, 71, 11);
+}
+
+#otros{
+    grid-area: otros;
+    background-color: rgb(75, 11, 131);
+}
+
+#footer{
+    grid-area: footer;
+    background-color: #d96941;
 }
 
 @media screen and (max-width: 992px){
