@@ -1,47 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.CSS">
-    <title>Chess</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>JaqueMate - Chess</title>
 </head>
-
 <body>
     <div id="contenedor">
-
-        <div id="nav">       
+        <div id="nav">
             <h2>JaqueMate</h2>
-            <div id="navButon">
+            <div id="navButton">
                 <div class="button"><a href="#inicio">Inicio</a></div>
-                <div class="button"><a href="#inicio">Aprender</a></div>
-                <div class="button"><a href="./noticias/noticias.html">Noticas</a></div>
-                <div class="button"><a href="./login/login.html">Iniciar Sesion</a></div>
+                <div class="button submenu">
+                    <a href="#aprender">Aprender</a>
+                    <div class="dropdown-content">
+                        <a href="#lecciones">Lecciones</a>
+                        <a href="#estrategias">Estrategias</a>
+                        <a href="#tacticas">Tácticas</a>
+                    </div>
+                </div>
+                <div class="button submenu">
+                    <a href="./noticias/noticias.html">Noticias</a>
+                    <div class="dropdown-content">
+                        <a href="#actualidad">Actualidad</a>
+                        <a href="#eventos">Eventos</a>
+                        <a href="#reportajes">Reportajes</a>
+                    </div>
+                </div>
+                <div class="button submenu">
+                    <a href="#comunidad">Comunidad</a>
+                    <div class="dropdown-content">
+                        <a href="#foro">Foro</a>
+                        <a href="#chat">Chat en Vivo</a>
+                        <a href="#perfiles">Perfiles</a>
+                    </div>
+                </div>
+                <div class="button submenu">
+                    <a href="#torneos">Torneos</a>
+                    <div class="dropdown-content">
+                        <a href="#locales">Locales</a>
+                        <a href="#nacionales">Nacionales</a>
+                        <a href="#internacionales">Internacionales</a>
+                    </div>
+                </div>
+                <div class="button"><a href="./login/login.html">Iniciar Sesión</a></div>
                 <div class="button"><a href="./login/registro.html">Registrarse</a></div>
-            </div>          
-        </div>
-
-
-        <div id="colum">
-            <h2>Partidas</h2>
-        </div>
-
-        <div id="tablero">
-            <h2 id="titulo">TABLERO</h2>
-            <div id="ajedrez"></div>
-            <div id="movimientos">
-                <H3>Movimientos</H3>
             </div>
         </div>
 
-        <div id="otros">
-            <h2>Otros</h2>
+        <div id="main">
+            <div id="colum">
+                <h2>Partidas</h2>
+            </div>
+            <div id="tablero">
+                <h2 id="titulo">TABLERO</h2>
+                <div id="ajedrez"></div>
+                <div id="movimientos">
+                    <h3>Movimientos</h3>
+                </div>
+            </div>
+            <div id="otros">
+                <h2>Otros</h2>
+            </div>
         </div>
 
         <div id="footer">
-            <h2>footer</h2>
-        </div>        
+            <h2>Footer</h2>
+            <div id="multilenguaje">
+                <label for="idioma">Idioma:</label>
+                <select id="idioma" name="idioma">
+                    <option value="es">Español</option>
+                    <option value="en">Inglés</option>
+                </select>
+            </div>
+        </div>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>
