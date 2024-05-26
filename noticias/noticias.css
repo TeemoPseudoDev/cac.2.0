@@ -1,5 +1,9 @@
 body{
-    margin: 0px;    
+                display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+ 
     background: rgb(255, 255, 255);
 }
 
@@ -12,6 +16,7 @@ body{
     "nav"
     "noticias"
     "footer";
+    
 
     #colum {
         display: none;
@@ -131,7 +136,7 @@ a {
     background-color: #d96941;
 }
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 915px){
 
 
     #noticias{
